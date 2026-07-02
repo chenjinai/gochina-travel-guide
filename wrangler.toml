@@ -1,0 +1,17 @@
+name = "gochina-travel-guide"
+main = "dist/server/server.js"
+compatibility_date = "2025-07-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "dist/client"
+
+[observability]
+enabled = true
+
+# [vars]
+# Secrets are managed via `wrangler secret put` or Cloudflare Dashboard.
+# For local dev, create a .dev.vars file (already gitignored) with:
+#   DEEPSEEK_API_KEY = "your-key"
+#   TAVILY_API_KEY = "your-key"
+# DO NOT commit real API keys to this file.

@@ -1,0 +1,18 @@
+{
+  "name": "attractions-expansion",
+  "leadAgentId": "84c9874293c54e77856b8c18242fac04",
+  "workspacePath": "c:/Users/13532/Desktop/gochina-travel-buddy-main",
+  "createdAt": "2026-06-24T08:52:39.585Z",
+  "options": {
+    "workspacePath": "c:/Users/13532/Desktop/gochina-travel-buddy-main",
+    "isAutoTeam": false
+  },
+  "members": [
+    {
+      "memberId": "team-lead@attractions-expansion",
+      "name": "team-lead",
+      "role": "Team Lead - coordinates the team and interacts with the user"
+    }
+  ],
+  "isAutoTeam": false
+}
