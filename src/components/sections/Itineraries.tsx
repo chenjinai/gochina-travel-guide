@@ -25,6 +25,7 @@ const images: Record<CityKey, string> = {
   wuhan: wuhanImg, changsha: changshaImg,
   fuzhou: fuzhouImg, jinan: jinanImg, hefei: hefeiImg,
   nanchang: nanchangImg, nanning: nanningImg,
+  jiuzhaigou: zhangjiajieImg,
 };
 
 export function Itineraries() {

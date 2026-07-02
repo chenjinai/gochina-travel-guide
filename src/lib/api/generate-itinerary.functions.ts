@@ -14,7 +14,7 @@ import { enhanceItinerary } from "../itinerary/search-enhancer";
 // ==================== DeepSeek API 配置 ====================
 
 const DEEPSEEK_API_URL = "https://api.deepseek.com/chat/completions";
-const DEEPSEEK_MODEL = "deepseek-v4-pro";
+const DEEPSEEK_MODEL = "deepseek-chat";
 
 // ==================== Zod 输入验证 ====================
 

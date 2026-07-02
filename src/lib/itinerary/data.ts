@@ -17,6 +17,7 @@ export const CITIES: CityMeta[] = [
   { cityId: "chengdu", cityName: "成都", province: "四川", cityLevel: "新一线", geoCoord: [104.0, 30.6], defaultAreas: ["市区人文线", "武侯祠-锦里", "熊猫-近郊"], tags: { "美食城市": 10, "历史古都": 5, "自然山水": 5, "现代都市": 4 } },
   { cityId: "guangzhou", cityName: "广州", province: "广东", cityLevel: "一线", geoCoord: [113.2, 23.1], defaultAreas: ["珠江新城-广州塔", "荔湾老城区", "越秀-北京路"], tags: { "美食城市": 9, "现代都市": 7, "历史古都": 4, "自然山水": 3 } },
   { cityId: "zhangjiajie", cityName: "张家界", province: "湖南", cityLevel: "三线", geoCoord: [110.4, 29.1], defaultAreas: ["武陵源景区", "天门山景区"], tags: { "自然山水": 10, "历史古都": 1, "美食城市": 2 } },
+  { cityId: "jiuzhaigou", cityName: "九寨沟", province: "四川", cityLevel: "景区", geoCoord: [103.9, 33.3], defaultAreas: ["九寨沟景区", "沟口-漳扎镇"], tags: { "自然山水": 10, "美食城市": 3, "历史古都": 1 } },
   { cityId: "wuhan", cityName: "武汉", province: "湖北", cityLevel: "新一线", geoCoord: [114.3, 30.6], defaultAreas: ["武昌人文线", "东湖风景区", "汉阳-汉口"], tags: { "历史古都": 7, "美食城市": 8, "自然山水": 6, "现代都市": 5 } },
   { cityId: "changsha", cityName: "长沙", province: "湖南", cityLevel: "新一线", geoCoord: [112.9, 28.2], defaultAreas: ["岳麓-橘子洲", "市区文化线"], tags: { "美食城市": 9, "历史古都": 5, "自然山水": 5, "现代都市": 4 } },
   { cityId: "dalian", cityName: "大连", province: "辽宁", cityLevel: "二线", geoCoord: [121.6, 38.9], defaultAreas: ["滨海路-中山广场", "旅顺口区", "市区商业线"], tags: { "自然山水": 8, "美食城市": 6, "现代都市": 5 } },
@@ -126,6 +127,15 @@ export const ATTRACTIONS: Attraction[] = [
   { id: makeId("zhangjiajie", "黄龙洞"), name: "黄龙洞", cityId: "zhangjiajie", area: "武陵源景区", type: "自然风光", duration: 2, intensity: 2, ticketPrice: 100, isClosedOnMonday: false, geoCoord: [110.577, 29.355] },
   { id: makeId("zhangjiajie", "宝峰湖"), name: "宝峰湖", cityId: "zhangjiajie", area: "武陵源景区", type: "自然风光", duration: 1.5, intensity: 1, ticketPrice: 96, isClosedOnMonday: false, geoCoord: [110.553, 29.344] },
   { id: makeId("zhangjiajie", "大峡谷玻璃桥"), name: "大峡谷玻璃桥", cityId: "zhangjiajie", area: "武陵源景区", type: "自然风光", duration: 3, intensity: 3, ticketPrice: 219, isClosedOnMonday: false, geoCoord: [110.625, 29.409] },
+
+  // ===== 九寨沟 =====
+  { id: makeId("jiuzhaigou", "九寨沟风景区"), name: "九寨沟风景区", cityId: "jiuzhaigou", area: "九寨沟景区", type: "自然风光", duration: 6, intensity: 4, ticketPrice: 169, isClosedOnMonday: false, geoCoord: [103.920, 33.163] },
+  { id: makeId("jiuzhaigou", "五花海"), name: "五花海", cityId: "jiuzhaigou", area: "九寨沟景区", type: "自然风光", duration: 1, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [103.905, 33.180] },
+  { id: makeId("jiuzhaigou", "诺日朗瀑布"), name: "诺日朗瀑布", cityId: "jiuzhaigou", area: "九寨沟景区", type: "自然风光", duration: 1, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [103.910, 33.170] },
+  { id: makeId("jiuzhaigou", "珍珠滩"), name: "珍珠滩", cityId: "jiuzhaigou", area: "九寨沟景区", type: "自然风光", duration: 1, intensity: 2, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [103.900, 33.175] },
+  { id: makeId("jiuzhaigou", "树正群海"), name: "树正群海", cityId: "jiuzhaigou", area: "九寨沟景区", type: "自然风光", duration: 1.5, intensity: 2, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [103.910, 33.200] },
+  { id: makeId("jiuzhaigou", "长海"), name: "长海", cityId: "jiuzhaigou", area: "九寨沟景区", type: "自然风光", duration: 1.5, intensity: 2, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [103.930, 33.140] },
+  { id: makeId("jiuzhaigou", "藏家乐体验"), name: "藏家乐体验", cityId: "jiuzhaigou", area: "沟口-漳扎镇", type: "商圈美食", duration: 2, intensity: 1, ticketPrice: 80, isClosedOnMonday: false, geoCoord: [103.890, 33.230] },
 
   // ===== 武汉 =====
   { id: makeId("wuhan", "黄鹤楼"), name: "黄鹤楼", cityId: "wuhan", area: "武昌人文线", type: "历史古迹", duration: 2, intensity: 2, ticketPrice: 70, isClosedOnMonday: false, geoCoord: [114.298, 30.546] },

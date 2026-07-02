@@ -333,6 +333,7 @@ async function exportPdf(days: ItineraryDay[]) {
         hangzhou: "💡 Rent a bike to circle West Lake — the full loop is ~15km of beauty.",
         guangzhou: "💡 Dim sum is best before 11 AM — locals call it 'morning tea'.",
         chengdu: "💡 Pandas are most active 8-10 AM — arrive early for feeding time!",
+        jiuzhaigou: "💡 Autumn (Oct) is peak season — book tickets & hotels 2 weeks ahead.",
         wuhan: "💡 Try hot-dry noodles (热干面) for breakfast — Wuhan's signature dish.",
         changsha: "💡 Orange Isle light show starts at 8 PM — don't miss the spectacle.",
       };

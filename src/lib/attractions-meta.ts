@@ -335,6 +335,17 @@ export const ATTRACTION_META: Record<CityKey, AttractionMeta[]> = {
     { duration: 2, intensity: "Low",    category: "nature" },       // 6  Guangxi Medicinal Herb Garden
     { duration: 2, intensity: "Low",    category: "urban" },        // 7  MixC Shopping & ASEAN Avenue
   ],
+
+  // ===== 九寨沟 (7) — sorted by popularity =====
+  jiuzhaigou: [
+    { duration: 6, intensity: "High",   category: "nature" },       // 1  Jiuzhaigou Valley
+    { duration: 2, intensity: "Low",    category: "nature" },       // 2  Five Flower Lake
+    { duration: 1, intensity: "Low",    category: "nature" },       // 3  Nuorilang Waterfall
+    { duration: 1.5, intensity: "Low",  category: "nature" },       // 4  Pearl Shoal
+    { duration: 1.5, intensity: "Low",  category: "nature" },       // 5  Shuzheng Lakes
+    { duration: 2, intensity: "Low",    category: "nature" },       // 6  Long Lake
+    { duration: 2, intensity: "Low",    category: "food-shopping" },// 7  Tibetan Homestay
+  ],
 };
 
 export const CITY_LABELS: Record<CityKey, string> = {
@@ -346,6 +357,7 @@ export const CITY_LABELS: Record<CityKey, string> = {
   nanchang: "Nanchang", nanning: "Nanning",
   dalian: "Dalian", shenyang: "Shenyang", harbin: "Harbin",
   daqing: "Daqing", changchun: "Changchun", jilin: "Jilin", yanji: "Yanji",
+  jiuzhaigou: "Jiuzhaigou",
 };
 
 export const intensityScore = (i: Intensity) => (i === "High" ? 3 : i === "Medium" ? 2 : 1);

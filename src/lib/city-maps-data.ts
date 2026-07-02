@@ -108,6 +108,16 @@ export const CITY_MAPS: Record<CityKey, CityMapData> = {
       { name: "Baofeng Lake", position: [29.3224, 110.5246], image: "", desc: "Emerald lake amid sandstone peaks with Tujia folk-song boat rides." },
     ],
   },
+  jiuzhaigou: {
+    center: [33.2634, 103.8988], zoom: 13,
+    attractions: [
+      { name: "Jiuzhaigou Valley", position: [33.1630, 103.9200], image: "", desc: "UNESCO World Heritage — 114 turquoise lakes in a Y-shaped glacial valley." },
+      { name: "Five Flower Lake", position: [33.1800, 103.9050], image: "", desc: "The crown jewel — crystal-clear water revealing ancient fallen trees below." },
+      { name: "Nuorilang Waterfall", position: [33.1700, 103.9100], image: "", desc: "China's widest waterfall at 270m — the valley's thunderous heart." },
+      { name: "Pearl Shoal", position: [33.1750, 103.9000], image: "", desc: "A vast travertine cascade where water tumbles like scattered pearls." },
+      { name: "Shuzheng Lakes", position: [33.2000, 103.9100], image: "", desc: "19 terraced lakes in a staircase formation — the valley's entrance gallery." },
+    ],
+  },
   hangzhou: {
     center: [30.2741, 120.1551], zoom: 11,
     attractions: [

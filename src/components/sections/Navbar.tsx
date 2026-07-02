@@ -37,6 +37,7 @@ const CITY_IMAGES: Record<CityKey, string> = {
   wuhan: wuhanImg, changsha: changshaImg,
   fuzhou: fuzhouImg, jinan: jinanImg, hefei: hefeiImg,
   nanchang: nanchangImg, nanning: nanningImg,
+  jiuzhaigou: zhangjiajieImg,
   dalian: shanghaiImg, shenyang: beijingImg, harbin: xianImg,
   daqing: jinanImg, changchun: nanjingImg, jilin: hefeiImg, yanji: changshaImg,
 };

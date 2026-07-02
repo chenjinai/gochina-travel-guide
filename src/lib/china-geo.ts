@@ -72,7 +72,7 @@ export const PROVINCES: Record<ProvinceKey, ProvinceDef> = {
   hunan: { en: "Hunan", zh: "湖南", region: "central", cities: ["changsha", "zhangjiajie"] },
   guangdong: { en: "Guangdong", zh: "广东", region: "south", cities: ["guangzhou"] },
   guangxi: { en: "Guangxi", zh: "广西", region: "south", cities: ["nanning"] },
-  sichuan: { en: "Sichuan", zh: "四川", region: "southwest", cities: ["chengdu"] },
+  sichuan: { en: "Sichuan", zh: "四川", region: "southwest", cities: ["chengdu", "jiuzhaigou"] },
   shaanxi: { en: "Shaanxi", zh: "陕西", region: "northwest", cities: ["xian"] },
   qinghai: { en: "Qinghai", zh: "青海", region: "northwest", cities: ["xining", "qinghaihu", "chaka", "delingha", "dachaidan"] },
   gansu: { en: "Gansu", zh: "甘肃", region: "northwest", cities: ["dunhuang", "jiayuguan", "zhangye", "lanzhou"] },
@@ -84,7 +84,7 @@ export const PROVINCES: Record<ProvinceKey, ProvinceDef> = {
 /* ---------- 城市（核心联合类型） ---------- */
 export const ALL_CITIES = [
   "beijing", "nanjing", "xian", "shanghai", "suzhou", "zhangjiajie",
-  "hangzhou", "guangzhou", "chengdu", "wuhan", "changsha",
+  "hangzhou", "guangzhou", "chengdu", "jiuzhaigou", "wuhan", "changsha",
   "fuzhou", "jinan", "hefei", "nanchang", "nanning",
   "dalian", "shenyang", "harbin", "daqing", "changchun", "jilin", "yanji",
   // 青甘大环线
@@ -122,6 +122,7 @@ export const CITY_LABELS_EN: Record<CityKey, string> = {
   xining: "Xining", qinghaihu: "Qinghai Lake", chaka: "Chaka Salt Lake",
   delingha: "Delingha", dachaidan: "Dachaidan",
   dunhuang: "Dunhuang", jiayuguan: "Jiayuguan", zhangye: "Zhangye", lanzhou: "Lanzhou",
+  jiuzhaigou: "Jiuzhaigou",
 };
 
 export const CITY_LABELS_ZH: Record<CityKey, string> = {
@@ -136,6 +137,7 @@ export const CITY_LABELS_ZH: Record<CityKey, string> = {
   xining: "西宁", qinghaihu: "青海湖", chaka: "茶卡盐湖",
   delingha: "德令哈", dachaidan: "大柴旦",
   dunhuang: "敦煌", jiayuguan: "嘉峪关", zhangye: "张掖", lanzhou: "兰州",
+  jiuzhaigou: "九寨沟",
 };
 
 /* ---------- 城市地理坐标 (lat, lng) ---------- */
@@ -176,4 +178,5 @@ export const CITY_COORDS: Record<CityKey, CityCoord> = {
   jiayuguan: { lat: 39.7725, lng: 98.2892 },
   zhangye: { lat: 38.9318, lng: 100.4553 },
   lanzhou: { lat: 36.0611, lng: 103.8343 },
+  jiuzhaigou: { lat: 33.2634, lng: 103.8988 },
 };

@@ -69,6 +69,7 @@ const CITY_IMAGES: Record<CityKey, string> = {
   xining: xiningImg, qinghaihu: qinghaihuImg, chaka: chakaImg,
   delingha: delinghaImg, dachaidan: dachaidanImg,
   dunhuang: dunhuangImg, jiayuguan: jiayuguanImg, zhangye: zhangyeImg, lanzhou: lanzhouImg,
+  jiuzhaigou: zhangjiajieImg,
 };
 
 // --- Helpers to group cities by region ---
