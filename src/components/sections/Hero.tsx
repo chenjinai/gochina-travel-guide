@@ -113,14 +113,14 @@ export function Hero() {
             onClick={handleExplore}
             className="h-12 w-full rounded-full bg-white px-8 text-base font-semibold text-primary shadow-xl hover:bg-white/90"
           >
-            自己探索
+            {t.hero.exploreBtn}
           </Button>
           <Button
             size="lg"
             onClick={handlePlan}
             className="h-12 w-full rounded-full bg-primary px-8 text-base font-semibold text-primary-foreground shadow-xl hover:bg-primary/90"
           >
-            帮我规划
+            {t.hero.planBtn}
           </Button>
         </div>
 
