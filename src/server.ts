@@ -41,9 +41,9 @@ export default {
   async fetch(request: Request, env: Record<string, unknown>, ctx: unknown) {
     // 1) static assets: Cloudflare will serve them via [assets] in wrangler.toml.
     //    If ASSETS binding exists, try it first; 404 means "not a static file" → fall through to SSR.
-    if (env.ASSETS) {
+    if (env?.ASSETS) {
       try {
-        const assetResponse = await (env.ASSETS as Fetcher).fetch(request);
+        const assetResponse = await (env.ASSETS as any).fetch(request);
         if (assetResponse.status !== 404) {
           return assetResponse;
         }
