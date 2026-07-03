@@ -13,5 +13,5 @@ enabled = true
 # Secrets are managed via `wrangler secret put` or Cloudflare Dashboard.
 # For local dev, create a .dev.vars file (already gitignored) with:
 #   DEEPSEEK_API_KEY = "your-key"
-#   TAVILY_API_KEY = "your-key"
+#   VOLCENGINE_SEARCH_API_KEY = "your-key"
 # DO NOT commit real API keys to this file.

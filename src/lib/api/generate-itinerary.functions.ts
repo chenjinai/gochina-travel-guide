@@ -9,7 +9,7 @@ import type { ItineraryResult, TimeSlot } from "../itinerary/types";
 import { CITIES, ATTRACTIONS } from "../itinerary/data";
 import { PACE_CONFIGS, BUDGET_CONFIGS, COMPANION_CONFIGS, TIME_CONSTANTS, parseDays, parseBudget, parsePace } from "../itinerary/config";
 import { generateItinerary } from "../itinerary/generator";
-import { enhanceItinerary } from "../itinerary/search-enhancer";
+import { searchForContext } from "../itinerary/volcsearch";
 
 // ==================== DeepSeek API 配置 ====================
 
@@ -29,7 +29,7 @@ const userParamsSchema = z.object({
 
 // ==================== Prompt 构建 ====================
 
-function buildSystemPrompt(): string {
+function buildSystemPrompt(searchContext?: string): string {
   const citiesJson = JSON.stringify(
     CITIES.map((c) => ({
       cityId: c.cityId,
@@ -85,9 +85,13 @@ function buildSystemPrompt(): string {
   "warnings": string[]
 }`;
 
-  return `你是一个专业的中国旅游行程规划专家。请根据用户偏好和可用景点数据，生成一份详尽、合理、一致的多日行程。
+  const searchSection = searchContext
+    ? `## 🔍 实时搜索结果（参考以下最新信息辅助规划）\n${searchContext}\n\n`
+    : "";
 
-## 可用城市
+  return `你是一个专业的中国旅游行程规划专家。请根据用户偏好、可用景点数据和实时搜索结果，生成一份详尽、合理、一致的多日行程。
+
+${searchSection}## 可用城市
 ${citiesJson}
 
 ## 可用景点（必须严格从这里选择，禁止编造任何景点或城市）
@@ -352,7 +356,22 @@ export const generateAiItinerary = createServerFn({ method: "POST" })
       throw new Error("缺少 DEEPSEEK_API_KEY 环境变量，请在 .env 文件中配置");
     }
 
-    const systemPrompt = buildSystemPrompt();
+    // 先搜索参考信息
+    const searchApiKey = process.env.VOLCENGINE_SEARCH_API_KEY;
+    let searchContext = "";
+    if (searchApiKey) {
+      try {
+        const searchResult = await searchForContext(data as any, searchApiKey);
+        searchContext = searchResult.context;
+        console.log(`[AI Itinerary] Search complete: ${searchResult.docCount} docs from ${searchResult.queryCount} queries`);
+      } catch (err) {
+        console.warn("[AI Itinerary] Search failed, proceeding without search context:", err);
+      }
+    } else {
+      console.log("[AI Itinerary] No VOLCENGINE_SEARCH_API_KEY, skipping search");
+    }
+
+    const systemPrompt = buildSystemPrompt(searchContext || undefined);
     const userPrompt = buildUserPrompt(data);
 
     console.log("[AI Itinerary] Starting generation for:", {
@@ -428,18 +447,6 @@ export const generateAiItinerary = createServerFn({ method: "POST" })
           w.includes("未安排任何景点") || w.includes("不一致") || w.includes("重复")
         );
         if (severeWarnings.length === 0 || attempt === 2) {
-          // 搜索增强：实时验证景点信息、校准价格
-          try {
-            const tavilyKey = process.env.TAVILY_API_KEY;
-            if (tavilyKey) {
-              console.log("[AI Itinerary] Enhancing with search...");
-              const enhanced = await enhanceItinerary(result, tavilyKey);
-              console.log("[AI Itinerary] Search enhancement complete, optimizations:", enhanced.optimizations.length);
-              return enhanced;
-            }
-          } catch (searchErr) {
-            console.warn("[AI Itinerary] Search enhancement failed, returning original:", searchErr);
-          }
           return result;
         }
         console.warn("[AI Itinerary] Severe warnings found, retrying:", severeWarnings);
