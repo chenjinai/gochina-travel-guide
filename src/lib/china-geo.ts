@@ -62,7 +62,7 @@ export interface ProvinceDef {
 export const PROVINCES: Record<ProvinceKey, ProvinceDef> = {
   beijing: { en: "Beijing", zh: "北京", region: "north", cities: ["beijing"] },
   shanghai: { en: "Shanghai", zh: "上海", region: "east", cities: ["shanghai"] },
-  jiangsu: { en: "Jiangsu", zh: "江苏", region: "east", cities: ["nanjing", "suzhou", "wuxi", "yangzhou", "yancheng"] },
+  jiangsu: { en: "Jiangsu", zh: "江苏", region: "east", cities: ["nanjing", "suzhou", "wuxi", "yangzhou", "yancheng", "xuzhou"] },
   zhejiang: { en: "Zhejiang", zh: "浙江", region: "east", cities: ["hangzhou", "shaoxing"] },
   anhui: { en: "Anhui", zh: "安徽", region: "east", cities: ["hefei"] },
   fujian: { en: "Fujian", zh: "福建", region: "east", cities: ["fuzhou", "quanzhou", "xiamen"] },
