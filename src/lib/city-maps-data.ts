@@ -369,4 +369,64 @@ export const CITY_MAPS: Record<CityKey, CityMapData> = {
       { name: "Zhengning Road Night Market", position: [36.0550, 103.8190], image: "", desc: "Lanzhou's legendary food street — spiritual home of authentic beef noodles." },
     ],
   },
+  wuxi: {
+    center: [31.4912, 120.3124], zoom: 11,
+    attractions: [
+      { name: "Turtle Head Isle (Yuantouzhu)", position: [31.5230, 120.2190], image: "", desc: "Scenic peninsula on Taihu Lake with cherry blossoms and classical gardens." },
+      { name: "Lingshan Grand Buddha", position: [31.4240, 120.1070], image: "", desc: "88m-tall bronze Buddha statue with the stunning Brahma Palace and musical fountain." },
+      { name: "Huishan Ancient Town", position: [31.5830, 120.2730], image: "", desc: "Canal-side historic quarter with clay figurine workshops and tea houses." },
+      { name: "Nanchang Street", position: [31.5650, 120.3040], image: "", desc: "Nightlife hub along the Grand Canal with bars, boutiques, and Taihu cuisine." },
+    ],
+  },
+  yangzhou: {
+    center: [32.3942, 119.4129], zoom: 12,
+    attractions: [
+      { name: "Slender West Lake", position: [32.4030, 119.4240], image: "", desc: "Elegant garden lake with arched bridges, willow banks, and a five-pavilion bridge." },
+      { name: "Geyuan Garden", position: [32.3970, 119.4430], image: "", desc: "Qing dynasty garden famous for its bamboo groves and four-season rockeries." },
+      { name: "Dongguan Street", position: [32.3990, 119.4480], image: "", desc: "Historic pedestrian street with centuries-old shops and Huaiyang cuisine restaurants." },
+      { name: "China Grand Canal Museum", position: [32.3860, 119.4320], image: "", desc: "Modern museum showcasing 2,500 years of Grand Canal history and culture." },
+    ],
+  },
+  yancheng: {
+    center: [33.3495, 120.1616], zoom: 11,
+    attractions: [
+      { name: "Elk Nature Reserve", position: [33.0650, 120.7540], image: "", desc: "Coastal wetland sanctuary for the rare Père David's deer — largest herd in China." },
+      { name: "Red-crowned Crane Reserve", position: [33.5390, 120.5780], image: "", desc: "Wetland home to the endangered red-crowned crane with pristine coastal scenery." },
+      { name: "Water Street", position: [33.3820, 120.1410], image: "", desc: "Canal-side historic commercial street with local seafood and salt-culture museums." },
+    ],
+  },
+  shaoxing: {
+    center: [29.9958, 120.5861], zoom: 12,
+    attractions: [
+      { name: "Lu Xun's Hometown", position: [30.0010, 120.5830], image: "", desc: "Birthplace of modern China's iconic writer — walk through his childhood lanes." },
+      { name: "Shen Garden", position: [29.9990, 120.5850], image: "", desc: "Romantic Song-dynasty garden with winding corridors and a tragic love story." },
+      { name: "Anchang Ancient Town", position: [30.1040, 120.5670], image: "", desc: "Authentic water town with stone arch bridges and traditional yellow rice wine breweries." },
+    ],
+  },
+  xuzhou: {
+    center: [34.2057, 117.2841], zoom: 11,
+    attractions: [
+      { name: "Yunlong Lake", position: [34.2320, 117.1570], image: "", desc: "Scenic mountain-rimmed lake with hiking trails, islands, and biking paths." },
+      { name: "Xuzhou Museum", position: [34.2630, 117.1850], image: "", desc: "Provincial museum with Han dynasty jade burial suits and terra-cotta warriors." },
+      { name: "Guishan Han Tomb", position: [34.2900, 117.1270], image: "", desc: "Underground Han dynasty tomb carved directly into a mountain with precision engineering." },
+    ],
+  },
+  quanzhou: {
+    center: [24.8740, 118.6759], zoom: 12,
+    attractions: [
+      { name: "Kaiyuan Temple", position: [24.9170, 118.5890], image: "", desc: "Tang dynasty temple with towering twin pagodas — Maritime Silk Road's spiritual heart." },
+      { name: "Qingyuan Mountain", position: [24.9490, 118.6070], image: "", desc: "Scenic mountain with an 8th-century Laojun rock carving overlooking the city." },
+      { name: "West Street", position: [24.9160, 118.5880], image: "", desc: "Millennium-old street with red-brick arcades, temples, and Minnan snacks." },
+      { name: "Luoyang Bridge", position: [24.9540, 118.6410], image: "", desc: "Song dynasty stone bridge — China's earliest surviving cross-sea beam bridge." },
+    ],
+  },
+  xiamen: {
+    center: [24.4798, 118.0894], zoom: 12,
+    attractions: [
+      { name: "Gulangyu Island", position: [24.4480, 118.0680], image: "", desc: "Car-free island of colonial villas, piano museums, and beaches — a UNESCO world heritage site." },
+      { name: "Nanputuo Temple", position: [24.4430, 118.0920], image: "", desc: "Thousand-year-old Buddhist temple at the foot of Wulao Mountain with ocean views." },
+      { name: "Zhongshan Road", position: [24.4540, 118.0840], image: "", desc: "Pedestrian street with colonial-era arcades and Fujianese seafood restaurants." },
+      { name: "Huangcuo Beach", position: [24.4350, 118.1100], image: "", desc: "Popular beachfront with cycling paths, cafes, and the artistic Zengcuoan village." },
+    ],
+  },
 };

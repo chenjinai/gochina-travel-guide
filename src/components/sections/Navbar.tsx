@@ -37,9 +37,15 @@ const CITY_IMAGES: Record<CityKey, string> = {
   wuhan: wuhanImg, changsha: changshaImg,
   fuzhou: fuzhouImg, jinan: jinanImg, hefei: hefeiImg,
   nanchang: nanchangImg, nanning: nanningImg,
+  wuxi: hangzhouImg, yangzhou: nanjingImg, yancheng: nanjingImg,
+  shaoxing: hangzhouImg, xuzhou: nanjingImg,
+  quanzhou: fuzhouImg, xiamen: fuzhouImg,
   jiuzhaigou: zhangjiajieImg,
   dalian: shanghaiImg, shenyang: beijingImg, harbin: xianImg,
   daqing: jinanImg, changchun: nanjingImg, jilin: hefeiImg, yanji: changshaImg,
+  xining: xianImg, qinghaihu: zhangjiajieImg, chaka: zhangjiajieImg,
+  delingha: xianImg, dachaidan: zhangjiajieImg,
+  dunhuang: xianImg, jiayuguan: xianImg, zhangye: zhangjiajieImg, lanzhou: xianImg,
 };
 
 /** 按区域分组获取省份列表 */
