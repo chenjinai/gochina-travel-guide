@@ -22,6 +22,11 @@ export const CITIES: CityMeta[] = [
   { cityId: "changsha", cityName: "长沙", province: "湖南", cityLevel: "新一线", geoCoord: [112.9, 28.2], defaultAreas: ["岳麓-橘子洲", "市区文化线"], tags: { "美食城市": 9, "历史古都": 5, "自然山水": 5, "现代都市": 4 } },
   { cityId: "dalian", cityName: "大连", province: "辽宁", cityLevel: "二线", geoCoord: [121.6, 38.9], defaultAreas: ["滨海路-中山广场", "旅顺口区", "市区商业线"], tags: { "自然山水": 8, "美食城市": 6, "现代都市": 5 } },
   { cityId: "shenyang", cityName: "沈阳", province: "辽宁", cityLevel: "新一线", geoCoord: [123.4, 41.8], defaultAreas: ["故宫-中街", "北陵-九一八", "太原街-西塔"], tags: { "历史古都": 8, "美食城市": 6, "现代都市": 5 } },
+  { cityId: "wuxi", cityName: "无锡", province: "江苏", cityLevel: "二线", geoCoord: [120.3, 31.5], defaultAreas: ["太湖风景区", "市区人文线"], tags: { "自然山水": 8, "历史古都": 7, "美食城市": 6, "古镇水乡": 5 } },
+  { cityId: "yangzhou", cityName: "扬州", province: "江苏", cityLevel: "二线", geoCoord: [119.4, 32.4], defaultAreas: ["蜀冈-瘦西湖", "老城区"], tags: { "历史古都": 8, "美食城市": 8, "古镇水乡": 7, "自然山水": 6 } },
+  { cityId: "yancheng", cityName: "盐城", province: "江苏", cityLevel: "二线", geoCoord: [120.2, 33.3], defaultAreas: ["大丰生态区", "市区文化线"], tags: { "自然山水": 9, "美食城市": 4, "历史古都": 3 } },
+  { cityId: "quanzhou", cityName: "泉州", province: "福建", cityLevel: "二线", geoCoord: [118.6, 24.9], defaultAreas: ["鲤城古城区", "清源山-西湖"], tags: { "历史古都": 9, "美食城市": 8, "古镇水乡": 7, "宗教文化": 5 } },
+  { cityId: "xiamen", cityName: "厦门", province: "福建", cityLevel: "二线", geoCoord: [118.1, 24.5], defaultAreas: ["鼓浪屿", "厦大-南普陀", "中山路-环岛路"], tags: { "自然山水": 8, "美食城市": 7, "现代都市": 6, "历史古都": 5 } },
   { cityId: "shaoxing", cityName: "绍兴", province: "浙江", cityLevel: "二线", geoCoord: [120.6, 30.0], defaultAreas: ["越城区", "柯桥区"], tags: { "古镇水乡": 9, "历史古都": 7, "自然山水": 6, "美食城市": 5 } },
   { cityId: "xuzhou", cityName: "徐州", province: "江苏", cityLevel: "二线", geoCoord: [117.2, 34.3], defaultAreas: ["泉山区", "云龙区", "鼓楼区"], tags: { "历史古都": 8, "自然山水": 6, "美食城市": 5 } },
   { cityId: "fuzhou", cityName: "福州", province: "福建", cityLevel: "二线", geoCoord: [119.3, 26.1], defaultAreas: ["三坊七巷", "鼓山-马尾", "市区"], tags: { "历史古都": 7, "自然山水": 6, "美食城市": 6 } },
@@ -168,6 +173,51 @@ export const ATTRACTIONS: Attraction[] = [
   { id: makeId("shenyang", "北陵公园"), name: "北陵公园", cityId: "shenyang", area: "北陵-九一八", type: "历史古迹", duration: 2.5, intensity: 2, ticketPrice: 50, isClosedOnMonday: false, geoCoord: [123.427, 41.860] },
   { id: makeId("shenyang", "九一八历史博物馆"), name: "九一八历史博物馆", cityId: "shenyang", area: "北陵-九一八", type: "博物馆", duration: 2, intensity: 1, ticketPrice: 0, isClosedOnMonday: true, geoCoord: [123.468, 41.835] },
   { id: makeId("shenyang", "西塔韩国风情街"), name: "西塔韩国风情街", cityId: "shenyang", area: "太原街-西塔", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [123.404, 41.801] },
+
+  // ===== 无锡 =====
+  { id: makeId("wuxi", "鼋头渚"), name: "鼋头渚", cityId: "wuxi", area: "太湖风景区", type: "自然风光", duration: 3, intensity: 3, ticketPrice: 90, isClosedOnMonday: false, geoCoord: [120.219, 31.523] },
+  { id: makeId("wuxi", "灵山大佛"), name: "灵山大佛", cityId: "wuxi", area: "太湖风景区", type: "历史古迹", duration: 3, intensity: 2, ticketPrice: 210, isClosedOnMonday: false, geoCoord: [120.107, 31.424] },
+  { id: makeId("wuxi", "惠山古镇"), name: "惠山古镇", cityId: "wuxi", area: "市区人文线", type: "历史古迹", duration: 2, intensity: 2, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [120.273, 31.583] },
+  { id: makeId("wuxi", "南长街"), name: "南长街", cityId: "wuxi", area: "市区人文线", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [120.304, 31.565] },
+  { id: makeId("wuxi", "三国水浒城"), name: "三国水浒城", cityId: "wuxi", area: "太湖风景区", type: "夜景演出", duration: 3, intensity: 2, ticketPrice: 150, isClosedOnMonday: false, geoCoord: [120.228, 31.494] },
+  { id: makeId("wuxi", "无锡博物院"), name: "无锡博物院", cityId: "wuxi", area: "市区人文线", type: "博物馆", duration: 2, intensity: 1, ticketPrice: 0, isClosedOnMonday: true, geoCoord: [120.299, 31.573] },
+  { id: makeId("wuxi", "拈花湾"), name: "拈花湾", cityId: "wuxi", area: "太湖风景区", type: "夜景演出", duration: 2.5, intensity: 1, ticketPrice: 120, isClosedOnMonday: false, geoCoord: [120.095, 31.410] },
+
+  // ===== 扬州 =====
+  { id: makeId("yangzhou", "瘦西湖"), name: "瘦西湖", cityId: "yangzhou", area: "蜀冈-瘦西湖", type: "自然风光", duration: 3, intensity: 2, ticketPrice: 100, isClosedOnMonday: false, geoCoord: [119.424, 32.403] },
+  { id: makeId("yangzhou", "个园"), name: "个园", cityId: "yangzhou", area: "老城区", type: "历史古迹", duration: 1.5, intensity: 1, ticketPrice: 45, isClosedOnMonday: false, geoCoord: [119.443, 32.397] },
+  { id: makeId("yangzhou", "何园"), name: "何园", cityId: "yangzhou", area: "老城区", type: "历史古迹", duration: 2, intensity: 1, ticketPrice: 45, isClosedOnMonday: false, geoCoord: [119.447, 32.388] },
+  { id: makeId("yangzhou", "大明寺"), name: "大明寺", cityId: "yangzhou", area: "蜀冈-瘦西湖", type: "历史古迹", duration: 1.5, intensity: 2, ticketPrice: 30, isClosedOnMonday: false, geoCoord: [119.420, 32.422] },
+  { id: makeId("yangzhou", "东关街"), name: "东关街", cityId: "yangzhou", area: "老城区", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [119.448, 32.399] },
+  { id: makeId("yangzhou", "中国大运河博物馆"), name: "中国大运河博物馆", cityId: "yangzhou", area: "蜀冈-瘦西湖", type: "博物馆", duration: 2.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: true, geoCoord: [119.432, 32.386] },
+  { id: makeId("yangzhou", "古运河夜游"), name: "古运河夜游", cityId: "yangzhou", area: "老城区", type: "夜景演出", duration: 1.5, intensity: 1, ticketPrice: 60, isClosedOnMonday: false, geoCoord: [119.445, 32.392] },
+
+  // ===== 盐城 =====
+  { id: makeId("yancheng", "中华麋鹿园"), name: "中华麋鹿园", cityId: "yancheng", area: "大丰生态区", type: "自然风光", duration: 3, intensity: 2, ticketPrice: 60, isClosedOnMonday: false, geoCoord: [120.754, 33.065] },
+  { id: makeId("yancheng", "荷兰花海"), name: "荷兰花海", cityId: "yancheng", area: "大丰生态区", type: "自然风光", duration: 2, intensity: 1, ticketPrice: 50, isClosedOnMonday: false, geoCoord: [120.501, 33.125] },
+  { id: makeId("yancheng", "丹顶鹤自然保护区"), name: "丹顶鹤自然保护区", cityId: "yancheng", area: "大丰生态区", type: "自然风光", duration: 2, intensity: 1, ticketPrice: 45, isClosedOnMonday: false, geoCoord: [120.578, 33.539] },
+  { id: makeId("yancheng", "新四军纪念馆"), name: "新四军纪念馆", cityId: "yancheng", area: "市区文化线", type: "博物馆", duration: 2, intensity: 1, ticketPrice: 0, isClosedOnMonday: true, geoCoord: [120.137, 33.375] },
+  { id: makeId("yancheng", "水街"), name: "水街", cityId: "yancheng", area: "市区文化线", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [120.141, 33.382] },
+  { id: makeId("yancheng", "黄海森林公园"), name: "黄海森林公园", cityId: "yancheng", area: "大丰生态区", type: "自然风光", duration: 3, intensity: 3, ticketPrice: 50, isClosedOnMonday: false, geoCoord: [120.815, 32.840] },
+  { id: makeId("yancheng", "大纵湖"), name: "大纵湖", cityId: "yancheng", area: "市区文化线", type: "自然风光", duration: 2, intensity: 2, ticketPrice: 60, isClosedOnMonday: false, geoCoord: [119.865, 33.395] },
+
+  // ===== 泉州 =====
+  { id: makeId("quanzhou", "开元寺"), name: "开元寺", cityId: "quanzhou", area: "鲤城古城区", type: "历史古迹", duration: 2, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.589, 24.917] },
+  { id: makeId("quanzhou", "清源山"), name: "清源山", cityId: "quanzhou", area: "清源山-西湖", type: "自然风光", duration: 3, intensity: 3, ticketPrice: 70, isClosedOnMonday: false, geoCoord: [118.607, 24.949] },
+  { id: makeId("quanzhou", "西街"), name: "西街", cityId: "quanzhou", area: "鲤城古城区", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.588, 24.916] },
+  { id: makeId("quanzhou", "崇武古城"), name: "崇武古城", cityId: "quanzhou", area: "清源山-西湖", type: "历史古迹", duration: 2.5, intensity: 2, ticketPrice: 45, isClosedOnMonday: false, geoCoord: [118.778, 24.875] },
+  { id: makeId("quanzhou", "洛阳桥"), name: "洛阳桥", cityId: "quanzhou", area: "鲤城古城区", type: "历史古迹", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.641, 24.954] },
+  { id: makeId("quanzhou", "海外交通史博物馆"), name: "海外交通史博物馆", cityId: "quanzhou", area: "鲤城古城区", type: "博物馆", duration: 2, intensity: 1, ticketPrice: 0, isClosedOnMonday: true, geoCoord: [118.602, 24.908] },
+  { id: makeId("quanzhou", "关帝庙天后宫"), name: "关帝庙天后宫", cityId: "quanzhou", area: "鲤城古城区", type: "历史古迹", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.591, 24.913] },
+
+  // ===== 厦门 =====
+  { id: makeId("xiamen", "鼓浪屿"), name: "鼓浪屿", cityId: "xiamen", area: "鼓浪屿", type: "自然风光", duration: 5, intensity: 3, ticketPrice: 35, isClosedOnMonday: false, geoCoord: [118.068, 24.448] },
+  { id: makeId("xiamen", "南普陀寺"), name: "南普陀寺", cityId: "xiamen", area: "厦大-南普陀", type: "历史古迹", duration: 2, intensity: 2, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.092, 24.443] },
+  { id: makeId("xiamen", "厦门大学"), name: "厦门大学", cityId: "xiamen", area: "厦大-南普陀", type: "历史古迹", duration: 2, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.097, 24.437] },
+  { id: makeId("xiamen", "中山路步行街"), name: "中山路步行街", cityId: "xiamen", area: "中山路-环岛路", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.084, 24.454] },
+  { id: makeId("xiamen", "环岛路"), name: "环岛路", cityId: "xiamen", area: "中山路-环岛路", type: "自然风光", duration: 2, intensity: 2, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.116, 24.434] },
+  { id: makeId("xiamen", "曾厝垵"), name: "曾厝垵", cityId: "xiamen", area: "中山路-环岛路", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.110, 24.435] },
+  { id: makeId("xiamen", "沙坡尾"), name: "沙坡尾", cityId: "xiamen", area: "中山路-环岛路", type: "商圈美食", duration: 1.5, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [118.088, 24.441] },
 
   // ===== 绍兴 =====
   { id: makeId("shaoxing", "鲁迅故里"), name: "鲁迅故里", cityId: "shaoxing", area: "越城区", type: "历史古迹", duration: 2, intensity: 1, ticketPrice: 0, isClosedOnMonday: false, geoCoord: [120.583, 30.001] },

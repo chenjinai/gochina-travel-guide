@@ -33,6 +33,11 @@ export const CITY_SEARCH_TERMS: Record<string, CityKey> = {
   changchun: "changchun",
   jilin: "jilin",
   yanji: "yanji",
+  wuxi: "wuxi",
+  yangzhou: "yangzhou",
+  yancheng: "yancheng",
+  quanzhou: "quanzhou",
+  xiamen: "xiamen",
 
   // ── 青甘大环线英文名 ──
   xining: "xining",
@@ -74,6 +79,11 @@ export const CITY_SEARCH_TERMS: Record<string, CityKey> = {
   "长春": "changchun",
   "吉林": "jilin",
   "延吉": "yanji",
+  "无锡": "wuxi",
+  "扬州": "yangzhou",
+  "盐城": "yancheng",
+  "泉州": "quanzhou",
+  "厦门": "xiamen",
 
   // ── 青甘大环线中文名 ──
   "西宁": "xining",
