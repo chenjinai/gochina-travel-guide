@@ -89,7 +89,7 @@ export function SmartItineraryResult() {
     setAiError(null);
 
     try {
-      const aiResult = await generateAiItinerary({ data: params });
+      const aiResult = await generateAiItinerary(params);
       setItinerary(aiResult);
     } catch (err: any) {
       console.error("[AI Itinerary] Failed:", err.message);
