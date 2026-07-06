@@ -335,7 +335,7 @@ function isCitySupported(destination: string[]): boolean {
 }
 
 export const generateAiItinerary = createServerFn({ method: "POST" })
-  .validator(userParamsSchema)
+  .inputValidator(userParamsSchema)
   .handler(async ({ data }): Promise<ItineraryResult> => {
     // 检查用户指定的城市是否在支持列表中
     if (!isCitySupported(data.destination)) {

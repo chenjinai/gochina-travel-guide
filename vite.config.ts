@@ -11,9 +11,5 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    serverFns: {
-      // 公共网站无用户认证，无需 CSRF 防护
-      disableCsrfMiddlewareWarning: true,
-    },
   },
 });
