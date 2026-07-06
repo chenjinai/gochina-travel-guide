@@ -20,12 +20,20 @@ import { ALL_CITIES } from "@/lib/china-geo";
 
 const images: Record<CityKey, string> = {
   beijing: beijingImg, nanjing: nanjingImg, xian: xianImg,
-  shanghai: shanghaiImg, zhangjiajie: zhangjiajieImg,
+  shanghai: shanghaiImg, suzhou: hangzhouImg, zhangjiajie: zhangjiajieImg,
   hangzhou: hangzhouImg, guangzhou: guangzhouImg, chengdu: chengduImg,
   wuhan: wuhanImg, changsha: changshaImg,
   fuzhou: fuzhouImg, jinan: jinanImg, hefei: hefeiImg,
   nanchang: nanchangImg, nanning: nanningImg,
+  wuxi: hangzhouImg, yangzhou: nanjingImg, yancheng: nanjingImg,
+  shaoxing: hangzhouImg, xuzhou: nanjingImg,
+  quanzhou: fuzhouImg, xiamen: fuzhouImg,
   jiuzhaigou: zhangjiajieImg,
+  dalian: shanghaiImg, shenyang: beijingImg, harbin: xianImg,
+  daqing: jinanImg, changchun: nanjingImg, jilin: hefeiImg, yanji: changshaImg,
+  xining: xianImg, qinghaihu: zhangjiajieImg, chaka: zhangjiajieImg,
+  delingha: xianImg, dachaidan: zhangjiajieImg,
+  dunhuang: xianImg, jiayuguan: xianImg, zhangye: zhangjiajieImg, lanzhou: xianImg,
 };
 
 export function Itineraries() {
