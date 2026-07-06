@@ -46,7 +46,7 @@ function MapController({ city }: { city: CityKey }) {
   useEffect(() => {
     if (initialFitDone.current) {
       const coord = CITY_COORDS[city];
-      map.flyTo([coord.lat, coord.lng], 9, { duration: 1.2 });
+      if (coord) map.flyTo([coord.lat, coord.lng], 9, { duration: 1.2 });
     }
   }, [city, map]);
 
@@ -60,7 +60,7 @@ export function ChinaCityLocator({
   lang,
   onViewAttractions,
 }: ChinaCityLocatorProps) {
-  const selected = CITY_COORDS[city];
+  const selected = CITY_COORDS[city] ?? { lat: 35, lng: 105 };
 
   // All cities with their coordinates
   const allCities = Object.entries(CITY_COORDS).map(([key, coord]) => ({
@@ -127,7 +127,6 @@ export function ChinaCityLocator({
             subdomains={lang === "zh" ? ["1", "2", "3", "4"] : "abcd"}
             maxZoom={18}
             key={lang}
-          />
           />
 
           {/* All city markers */}

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { CITY_COORDS, CITY_LABELS_EN, CITY_LABELS_ZH, type CityKey, type RegionKey } from "@/lib/china-geo";
 import type { Lang } from "@/lib/i18n";
 import { ATTRACTION_META, CATEGORY_LABELS, type AttractionCategory } from "@/lib/attractions-meta";
-import { CITY_MAPS } from "./AttractionsMap";
+import { CITY_MAPS } from "@/lib/city-maps-data";
 
 // --- 分类卡通图标 (inline SVG) ---
 // 每个分类有独特的颜色+图标，全国统一
@@ -202,7 +202,9 @@ function MapController({
     if (!initialFitDone.current) return;
     if (viewMode === "detail" && prevCity.current !== city) {
       const mapData = CITY_MAPS[city];
-      map.flyTo(mapData.center, mapData.zoom, { duration: 1.0 });
+      if (mapData) {
+        map.flyTo(mapData.center, mapData.zoom, { duration: 1.0 });
+      }
       prevCity.current = city;
     }
   }, [city, viewMode, map]);
@@ -269,8 +271,8 @@ export function UnifiedCityMap({ city, cityName, region, lang }: UnifiedCityMapP
     [],
   );
 
-  const selected = CITY_COORDS[city];
-  const attractionData = CITY_MAPS[city];
+  const selected = CITY_COORDS[city] ?? { lat: 35, lng: 105 };
+  const attractionData = CITY_MAPS[city] ?? { center: [35, 105] as [number, number], zoom: 4, attractions: [] };
 
   // 根据城市+景点名称查找分类
   const getAttractionCategory = useCallback(

@@ -1,4 +1,4 @@
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, lazy, Suspense, type ReactNode } from "react";
 import {
   Landmark,
   UtensilsCrossed,
@@ -28,6 +28,12 @@ import type { Lang } from "@/lib/i18n";
 const UnifiedCityMap = lazy(() =>
   import("./UnifiedCityMap").then((m) => ({ default: m.UnifiedCityMap })),
 );
+
+function ClientOnly({ children, fallback }: { children: ReactNode; fallback: ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  return mounted ? <>{children}</> : <>{fallback}</>;
+}
 
 // --- City images ---
 import beijingImg from "@/assets/beijing.jpg";
@@ -160,7 +166,9 @@ export function Destinations() {
   }, []);
 
   const city = t.destinations.cities[active];
-  const currentCities = regionCities[activeRegion];
+  const currentCities = regionCities[activeRegion].filter(
+    (ckey: CityKey) => t.destinations.cities[ckey] != null,
+  );
 
   // Scroll to city detail helper
   const scrollToCityDetail = () => {
@@ -188,26 +196,38 @@ export function Destinations() {
 
         {/* === Unified City & Attractions Map === */}
         <div className="mb-12">
-          <Suspense fallback={
-            <div className="rounded-2xl border border-border bg-card shadow-md overflow-hidden">
-              <div className="h-[380px] sm:h-[460px] flex items-center justify-center text-sm text-muted-foreground">
-                Loading map…
+          <ClientOnly
+            fallback={
+              <div className="rounded-2xl border border-border bg-card shadow-md overflow-hidden">
+                <div className="h-[380px] sm:h-[460px] flex items-center justify-center text-sm text-muted-foreground">
+                  Loading map…
+                </div>
               </div>
-            </div>
-          }>
-            <UnifiedCityMap
-              city={active}
-              cityName={city.name}
-              region={activeRegion}
-              lang={lang as Lang}
-            />
-          </Suspense>
+            }
+          >
+            <Suspense fallback={
+              <div className="rounded-2xl border border-border bg-card shadow-md overflow-hidden">
+                <div className="h-[380px] sm:h-[460px] flex items-center justify-center text-sm text-muted-foreground">
+                  Loading map…
+                </div>
+              </div>
+            }>
+              <UnifiedCityMap
+                city={active}
+                cityName={city.name}
+                region={activeRegion}
+                lang={lang as Lang}
+              />
+            </Suspense>
+          </ClientOnly>
         </div>
 
         {/* === Region Tabs === */}
         <div className="mb-6 flex flex-wrap justify-center gap-2 sm:gap-3">
           {REGIONS.map((rkey) => {
-            const cities = regionCities[rkey];
+            const cities = regionCities[rkey].filter(
+              (ckey: CityKey) => t.destinations.cities[ckey] != null,
+            );
             if (cities.length === 0) return null;
             const label = REGION_LABELS[rkey][lang as Lang];
             return (
